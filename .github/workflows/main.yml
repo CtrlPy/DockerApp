@@ -22,7 +22,7 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           images: |
-            flask/app
+            name/app
           tags: |
             type=ref,event=branch
             type=ref,event=pr
@@ -35,7 +35,7 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-          repository: flask-docker
+          repository: flask-docker/next
       -
         name: Build and push
         uses: docker/build-push-action@v3
